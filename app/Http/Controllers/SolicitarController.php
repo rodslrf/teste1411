@@ -112,4 +112,10 @@
             $veiculo = $solicitacao->veiculo;
             return view('solicitar.ver',compact('veiculo','solicitacao'));
         }
+        public function start($id) {
+
+            $solicitacao = Solicitar::find($id);
+            $veiculo = $solicitacao->veiculo;
+            return view('solicitar.start', compact('veiculo','solicitacao'))->with('success', 'Solicitação finalizada com sucesso');;
+        }
      }

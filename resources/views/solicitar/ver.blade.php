@@ -20,6 +20,8 @@
                     <img src="{{ asset('qrcodes/' . $solicitacao->veiculo->qr_code) }}" alt="QR Code do veículo">
             </div>
             <div class="card-footer">
+            <a href="{{ route('solicitar.start', $solicitar->veiculo->id) }}" class="btn btn-info btn-sm">Iniciar</a>
+
                     <form action="{{ url('veiculos/'.$solicitacao->veiculo->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
